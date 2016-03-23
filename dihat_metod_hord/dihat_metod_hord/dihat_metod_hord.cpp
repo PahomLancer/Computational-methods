@@ -16,10 +16,10 @@ int main()
     scanf("%lf", &b);
     printf("Input epsilon: ");
     scanf("%lf", &e);
-	fa = 3*a-cos(a)-1;
-    fb = 3*b-cos(b)-1;
-    c = a - fa/(fb-fa)*(b-a); //center c = a - (f(a)/(f(b)-f(a))*(b-a))
-    fc = 3*c-cos(c)-1;
+	fa = 3*a - cos(a) - 1;
+    fb = 3*b - cos(b) - 1;
+    c = a - fa/(fb - fa)*(b - a); //center c = a - (f(a)/(f(b)-f(a))*(b-a))
+    fc = 3*c - cos(c) - 1;
     while (abs(fc) > e)
     {
         i++;
@@ -27,12 +27,12 @@ int main()
             a = c;
         else
             b = c;
-		fa = 3*a-cos(a)-1;
-		fb = 3*b-cos(b)-1;
-		c = a - fa/(fb-fa)*(b-a);
-		fc = 3*c-cos(c)-1;
+		fa = 3*a - cos(a) - 1;
+		fb = 3*b - cos(b) - 1;
+		c = a - fa/(fb - fa)*(b - a);
+		fc = 3*c - cos(c) - 1;
     }
-    printf("Dihotom\n");
+    printf("Hord\n");
 	printf("Iterations = %d, c = %lf", i, c);
     return 0;
 }
