@@ -20,7 +20,7 @@ int main()
     printf("Input epsilon: ");
     scanf("%lf", &e);
 	fa = 3*a - cos(a) - 1;
-	fad2 = sin(a) + 3;
+	fad2 = cos(a);
 	if (fa*fad2>0)
             c = a;
         else
