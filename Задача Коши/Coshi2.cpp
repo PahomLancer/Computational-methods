@@ -97,5 +97,14 @@ int main()
 	//delete[] x; //Удаление массива
 	//delete[] r; //Удаление массива
 	//delete[] y;	//Удаление массива
+	//Метод Милна
+	for (int i = 4; i <= n; i++){
+		y[i] = y[i - 4] + 4 * h / 3 * (2 * funcd(x[i - 3], y[i - 3]) - funcd(x[i - 2], y[i - 2]) + 2 * funcd(x[i - 1], y[i - 1]));
+		//y[i] = y[i - 2] + 4 * h / 3 * (funcd(x[i - 2], y[i - 2]) - 4 * funcd(x[i - 1], y[i - 1]) + funcd(x[i], y[i]));
+	}
+	printf("Метод Милна:\ndy = e^x*y^2 - 2*y\ny(0)=1/2; x=[0,2]; h = 0.1; n = 20;\n");
+	for (int i = 0; i <= n; i++){
+		printf("i=%d, x=%lf, yt=%lf, y=%lf, r=%lf\n", i, x[i], yt[i], y[i], abs(yt[i] - y[i]));
+	}
 	return 0;
 }
