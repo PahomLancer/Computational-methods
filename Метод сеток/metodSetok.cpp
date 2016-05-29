@@ -69,6 +69,15 @@ int main()
 	for (int i = 1; i <= n; i++){
 		printf("i=%d, x=%lf, y=%lf\n", i, x[i], y[i]);
 	}
+	delete[] x; //Удаление массива
+	delete[] f; //Удаление массива
+	delete[] q; //Удаление массива
+	delete[] p; //Удаление массива
+	delete[] ni; //Удаление массива
+	delete[] mi; //Удаление массива
+	delete[] c; //Удаление массива
+	delete[] d; //Удаление массива
+	delete[] y;	//Удаление массива
 	return 0;
 }
 
