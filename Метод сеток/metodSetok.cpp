@@ -17,7 +17,8 @@ int main()
 	//y''+p(x)y'-q(x)y=f(x), a<=x<=b, a0*y(a)+a1*y'(a)=A, b0*y(b)+b1*y'(b)=B
 	//p(x) = 2x^2, q(x) = -1, f(x) = x, 0.5 <= x <= 0.8, A = 1, B = 3
 	double a0 = 2, a1 = -1, b0 = 1, b1 = 0, a = 0.5, b = 0.8, A = 1, B = 3;
-	double n = 30, h;
+	int n = 30;
+	double h;
 	h = (b - a) / n; //рассчет шага
 	//y'(i) = (y(i+1)-y(i))/h;
 	//y''(i) = (y(i+2)-2*y(i+1)+y(i))/h^2
@@ -60,7 +61,8 @@ int main()
 		c[i] = 1 / (mi[i] - ni[i] * c[i - 1]);
 		d[i] = f[i] * h*h - ni[i] * c[i - 1] * d[i - 1];
 	}
-	y[30] = (b1*c[28] * d[28] + B*h) / (b1*(1 + c[28]) + b0*h);
+	y[n] = (b1*c[n-2] * d[n-2] + B*h) / (b1*(1 + c[n-2]) + b0*h);
+	//y[n - 1] = (b1*c[n - 3] * d[n - 3] + B*h) / (b1*(1 + c[n - 3]) + b0*h);
 	for (int i = n-1; i >= 1; i--){
 		y[i] = c[i - 1] * (d[i - 1] - y[i + 1]);
 	}
